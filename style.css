@@ -23,6 +23,7 @@ body {
 	--background: #f0f0f0;
 	--color: #202020;
 	--points: #000000;
+	--invert: 100%;
 }
 
 html,
@@ -306,8 +307,8 @@ input {
 	width: 50px;
 	cursor: pointer;
 	-webkit-filter: invert(100%);
-	filter: invert(100%);
-	background-color: #0f0f0f;
+	filter: invert(var(--invert));
+	background-color: transparent;
 }
 
 #optionWheel:hover {

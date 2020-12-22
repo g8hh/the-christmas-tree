@@ -29,9 +29,9 @@ var colors = {
 		3: "#7f7f7f",
 	},
 	aqua: {
-		1: "#bfdfff",
-		2: "#8fa7bf",
-		3: "#5f6f7f",
+		1: "#eeeeee",
+		2: "#d0d0d0",
+		3: "#ababab",
 	},
 };
 var colors_theme;

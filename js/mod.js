@@ -12,8 +12,8 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.2",
-	name: "Cascading StyleShits",
+	num: "0.2.1",
+	name: "shut up about white theme",
 };
 
 let changelog = `<h1>Changelog:</h1><br>

@@ -430,7 +430,7 @@ const themes = {
 	1: "aqua",
 };
 const theme_names = {
-	aqua: "Aqua",
+	aqua: "Dark",
 };
 
 function changeTheme() {
@@ -438,15 +438,16 @@ function changeTheme() {
 	colors_theme = colors[player.theme || "default"];
 	document.body.style.setProperty(
 		"--background",
-		aqua ? "#001f3f" : "#f0f0f0"
+		aqua ? "#323240" : "#f0f0f0"
 	);
 	document.body.style.setProperty(
 		"--background_tooltip",
-		aqua ? "rgba(0, 15, 31, 0.75)" : "rgba(200, 200, 200, 0.75)"
+		aqua ? "rgba(0, 0, 0, 0.75)" : "rgba(200, 200, 200, 0.75)"
 	);
-	document.body.style.setProperty("--color", aqua ? "#bfdfff" : "#202020");
-	document.body.style.setProperty("--points", aqua ? "#dfefff" : "#000000");
-	document.body.style.setProperty("--locked", aqua ? "#c4a7b3" : "#bf8f8f");
+	document.body.style.setProperty("--color", aqua ? "#dedede" : "#202020");
+	document.body.style.setProperty("--points", aqua ? "#dddddd" : "#000000");
+	document.body.style.setProperty("--invert", aqua ? "0" : "100%");
+	document.body.style.setProperty("--locked", "#bf8f8f");
 }
 
 function getThemeName() {
