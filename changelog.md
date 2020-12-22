@@ -1,5 +1,18 @@
 # The Modding Tree changelog:
 
+## v2.3.5 - 12/21/20
+- Added resetTime, which tracks the time since a layer prestiged or was reset.
+- A layer node will be highlighted red if one of its subtabs is highlighted red.
+- Fixed issues with keeping challenges, buyables, and clickables on reset.
+- Improved the unlocking of custom layers.
+- Other minor fixes.
+
+## v2.3.4 - 12/16/20
+- Added an node image feature.
+- Resource display now always shows the amount of the currency the layer's gain is based on.
+- Added spacing between tree nodes.
+- Another attempt to fix tooltip flickering.
+
 ## v2.3.3 - 12/13/20
 - Fixed the first node in a row always taking up space.
 - layerShown is now optional.
