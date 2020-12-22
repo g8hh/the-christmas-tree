@@ -45,8 +45,12 @@ function getPointGen() {
 	let gain = new Decimal(1);
 
 	if (hasUpgrade("e", 12)) gain = gain.mul(upgradeEffect("e", 12));
-	if (hasUpgrade("m", 21)) gain = gain.mul(upgradeEffect("m", 21));
-	if (hasUpgrade("t", 12)) gain = gain.mul(10);
+
+	if (!inChallenge("m", 22)) {
+		if (hasUpgrade("m", 21)) gain = gain.mul(upgradeEffect("m", 21));
+		if (hasUpgrade("t", 12)) gain = gain.mul(10);
+	}
+
 	gain = gain.mul(buyableEffect("e", 11));
 
 	if (hasChallenge("m", 11)) gain = gain.pow(1.5);
