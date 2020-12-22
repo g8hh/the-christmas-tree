@@ -12,8 +12,8 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.1",
-	name: "Fart Mode",
+	num: "0.2",
+	name: "Cascading StyleShits",
 };
 
 let changelog = `<h1>Changelog:</h1><br>
