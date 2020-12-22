@@ -17,6 +17,10 @@ let VERSION = {
 };
 
 let changelog = `<h1>Changelog:</h1><br>
+	<h3>v0.2 - Cascading StyleShits</h3><br>
+		- finished trees<br>
+		- added some more challenges<br>
+		- made your eyes burn<br>
 	<h3>v0.1 - Fart Mode</h3><br>
 		- bad humor<br>
 		- added elves<br>
