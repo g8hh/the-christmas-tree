@@ -44,11 +44,15 @@ addLayer("m", {
 	],
 	base: 4,
 	effect() {
-		return nD(2)
-			.pow(player.m.points)
-			.max(1)
-			.pow(hasUpgrade("m", 22) ? 2 : 1)
-			.pow(hasChallenge("m", 21) ? 3 : 1);
+		return softcap(
+			nD(2)
+				.pow(player.m.points)
+				.max(1)
+				.pow(hasUpgrade("m", 22) ? 2 : 1)
+				.pow(hasChallenge("m", 21) ? 3 : 1),
+			nD(1e150),
+			0.5
+		);
 	},
 	roundUpCost: true,
 	effectDescription() {

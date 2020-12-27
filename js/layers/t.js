@@ -62,7 +62,7 @@ addLayer("t", {
 		},
 		21: {
 			description: "I give up. Multiply tree gain by 1e10.",
-			cost: nD(1e36),
+			cost: nD(5e35),
 			unlocked() {
 				return hasUpgrade("t", 31);
 			},
@@ -89,7 +89,7 @@ addLayer("t", {
 		},
 		31: {
 			description: "This is boring. Give leaves another effect!",
-			cost: nD(1e35),
+			cost: nD(5e33),
 			unlocked() {
 				return hasUpgrade("t", 32);
 			},
@@ -105,9 +105,9 @@ addLayer("t", {
 		},
 		32: {
 			description: "Unlock another tree buyable.",
-			cost: nD(1e35),
+			cost: nD(1e33),
 			unlocked() {
-				return getBuyableAmount("t", 11).gte(2);
+				return getBuyableAmount("t", 11).gte(1);
 			},
 		},
 		33: {
@@ -124,8 +124,16 @@ addLayer("t", {
 		11: {
 			title: "Mod Your Leafblower",
 			cost() {
-				return nD(1e5).pow(
-					getBuyableAmount(this.layer, this.id).add(6)
+				return softcap(
+					softcap(
+						nD(1e5).pow(
+							getBuyableAmount(this.layer, this.id).add(6)
+						),
+						nD(1e100),
+						3
+					),
+					nD(1e308),
+					3
 				);
 			},
 			display() {
@@ -160,8 +168,10 @@ addLayer("t", {
 		12: {
 			title: "Enlist the help of elfs",
 			cost() {
-				return nD(1e7).pow(
-					getBuyableAmount(this.layer, this.id).add(5)
+				return softcap(
+					nD(1e7).pow(getBuyableAmount(this.layer, this.id).add(4)),
+					nD(1e308),
+					3
 				);
 			},
 			display() {
@@ -183,6 +193,7 @@ addLayer("t", {
 			},
 			effect() {
 				return player.e.points
+					.add(1)
 					.log10()
 					.pow(getBuyableAmount("t", 12))
 					.max(1);
@@ -217,6 +228,15 @@ addLayer("t", {
 		"blank",
 		"buyables",
 	],
+	hotkeys: [
+		{
+			key: "t",
+			description: "T: Reset for trees",
+			onPress() {
+				if (canReset(this.layer)) doReset(this.layer);
+			},
+		},
+	],
 	update(diff) {
 		if (hasUpgrade("t", 33))
 			player.t.leaves = player.t.leaves.add(
@@ -225,6 +245,7 @@ addLayer("t", {
 					.log10()
 					.pow(2)
 					.mul(buyableEffect("t", 11))
+					.mul(buyableEffect("t", 12))
 					.mul(diff)
 			);
 	},

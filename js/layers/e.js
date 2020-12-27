@@ -32,6 +32,7 @@ addLayer("e", {
 			if (hasUpgrade("t", 22)) mult = mult.mul(10);
 			if (hasUpgrade("t", 23)) mult = mult.mul(upgradeEffect("t", 23));
 			mult = mult.mul(layers.m.effect());
+			mult = mult.mul(layers.to.effect());
 		}
 
 		return mult;
@@ -116,6 +117,7 @@ addLayer("e", {
 					.pow(hasUpgrade("e", 22) ? 0.5 : 1);
 				let softcapped = softcap(out, nD(500), 1.5);
 				softcapped = softcap(softcapped, nD(1e50), 2);
+				softcapped = softcap(softcapped, nD("1e1000"), 3);
 				return softcapped;
 			},
 			display() {
@@ -157,7 +159,11 @@ addLayer("e", {
 		12: {
 			title: "Recruitment Campaign",
 			cost() {
-				return nD(8).pow(getBuyableAmount(this.layer, this.id).add(2));
+				const cost = nD(8).pow(
+					getBuyableAmount(this.layer, this.id).add(2)
+				);
+				let softcapped = softcap(cost, nD("1e1000"), 3);
+				return softcapped;
 			},
 			display() {
 				return getBuyableText(this.layer, this.id);

@@ -12,11 +12,15 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.2.1",
-	name: "shut up about white theme",
+	num: "0.3",
+	name: "Mandatory Dimensions",
 };
 
 let changelog = `<h1>Changelog:</h1><br>
+	<h3>v0.3 - Mandatory Dimensions</h3><br>
+		- added an antimatter dimensions clone (toys)<br>
+		- fixed bugs<br>
+		- made dark theme darker, silence mkey<br>
 	<h3>v0.2 - Cascading StyleShits</h3><br>
 		- finished trees<br>
 		- added some more challenges<br>
@@ -27,7 +31,7 @@ let changelog = `<h1>Changelog:</h1><br>
 		- added present machines<br>
 		- added about 4/9 of the tree layer`;
 
-let winText = `Congratulations! You have reached the end and beaten this game, but for now...`;
+let winText = `Hey, nice! You beat this game. There was originally gonna be 2 more rows, but christmas has come and gone, and TMT is not as easy-to-use as it makes itself out to be. So, for (probably) ever, you reached the end! Good job.`;
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
 // (The ones here are examples, all official functions are already taken care of)
@@ -73,7 +77,7 @@ var displayThings = [];
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.points.gte(new Decimal("e280000000"));
+	return player.to.points.gte(nD(17));
 }
 
 // Less important things beyond this point!

@@ -118,11 +118,12 @@ input {
 
 .can:hover {
 	transform: scale(1.15, 1.15);
-	box-shadow: 0 0 20px var(--points);
+	box-shadow: 0 var(--reset_notify_offset) 10px var(--points);
 }
 
 .resetNotify {
-	box-shadow: var(--hqProperty2a), 0 0 8px #ffffff;
+	box-shadow: var(--hqProperty2a),
+		0 var(--reset_notify_offset) 8px var(--reset_notify);
 	z-index: 3;
 }
 
@@ -135,7 +136,7 @@ input {
 .notify {
 	transform: scale(1.05, 1.05);
 	border-color: rgba(0, 0, 0, 0.125);
-	box-shadow: var(--hqProperty2a), 0 0 20px #ff0000;
+	box-shadow: var(--hqProperty2a), 0 0 20px var(--notify_color);
 	z-index: 3;
 }
 
@@ -279,7 +280,7 @@ input {
 .longUpg {
 	height: 50px;
 	width: 120px;
-	background: var(--points);
+	background: var(--invert_points);
 	border-radius: 50%;
 	border: 2px solid;
 	border-color: rgba(0, 0, 0, 0.125);
@@ -296,7 +297,7 @@ input {
 
 #points {
 	color: var(--points);
-	text-shadow: 0 0 10px var(--points);
+	/* text-shadow: 0 0 10px var(--points); */
 }
 
 #optionWheel {
@@ -365,7 +366,7 @@ input {
 	top: 4px;
 	text-align: right;
 	color: var(--points);
-	text-shadow: 0 0 10px var(--points);
+	/* text-shadow: 0 0 10px var(--points); */
 	cursor: pointer;
 }
 
@@ -383,17 +384,17 @@ a {
 .link {
 	display: block;
 	font-size: 20px;
-	color: #41f5f5;
+	color: #007fff;
 	cursor: pointer;
 	font-family: "Lucida Console", "Courier New", monospace;
 	-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: #02f2f2;
+	-webkit-text-stroke-color: #007fff;
 	text-decoration: none;
 }
 
 .link:hover {
 	transform: scale(1.2, 1.2);
-	text-shadow: 5px 0 10px #02f2f2, -3px 0 12px #02f2f2;
+	text-shadow: 5px 0 10px #007fff, -3px 0 12px #007fff;
 }
 
 .opt {
@@ -567,9 +568,9 @@ ul {
 
 [tooltip]:before {
 	position: absolute;
-	bottom: 100%;
+	top: 100%;
 	left: 50%;
-	margin-bottom: 5px;
+	margin-top: 4px;
 	margin-left: -80px;
 	padding: 7px;
 	width: 160px;
@@ -588,11 +589,11 @@ ul {
 
 [tooltip]:after {
 	position: absolute;
-	bottom: 100%;
+	top: 100%;
 	left: 50%;
 	margin-left: -5px;
 	width: 0;
-	border-top: 5px solid var(--background_tooltip);
+	border-bottom: 5px solid var(--background_tooltip);
 	border-right: 5px solid transparent;
 	border-left: 5px solid transparent;
 	content: " ";
