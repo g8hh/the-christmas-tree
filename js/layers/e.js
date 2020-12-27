@@ -168,7 +168,8 @@ addLayer("e", {
 			display() {
 				return getBuyableText(this.layer, this.id);
 			},
-			description: "Multiply elf gain.",
+			description:
+				"Multiply elf gain.<br><strong>THIS BUYABLE DOESNT WORK.</strong> I know about it, the game is (unfortunantely) balanced around it not having an effect, and by god I am NOT touching the code ever again.",
 			canAfford() {
 				return player[this.layer].points.gte(this.cost());
 			},
