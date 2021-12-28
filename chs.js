@@ -27,6 +27,7 @@ var cnItems = {
     "Automatically buy one of each elf buyable per tick.": "每tick自动购买1个每个精灵可购买。",
     "ego": "自我",
     "Keep elf buyables on row 2 resets.": "将精灵可购买物品保留在第 2 行重置。",
+    "Keep elf upgrades on row 2 resets.": "将精灵升级保留在第 2 行重置。",
     "present machines": "礼物机器",
     "presents": "礼物",
     "Reset for +": "重置得到 + ",
