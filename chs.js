@@ -280,6 +280,7 @@ var cnRegReplace = new Map([
     [/^([\d\.]+)m ([\d\.]+)s$/, '$1分 $2秒'],
     [/^([\d\.]+)d ([\d\.]+)h ([\d\.]+)m ([\d\.]+)s$/, '$1天 $2小时 $3分 $4秒'],
     [/^You have (.+) manufactured toys, giving a (.+) multiplier to elf gain$/, '你有 $1 个人造玩具，给精灵增益 $2 乘数'],
+    [/^Reach (.+) elves to unlock \(You have (.+) elves\)$/, '达到 $1 精灵解锁（你有 $2 精灵）'],
     [/^You have (.+) points$/, '你有 $1 点数'],
     [/^You have (.+) presents$/, '你有 $1 礼物'],
     [/^You have (.+) elves$/, '你有 $1 精灵'],
